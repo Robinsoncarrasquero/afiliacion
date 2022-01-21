@@ -22,7 +22,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/user/{user}/edit',[App\Http\Controllers\UserController::class,'edit'])->name('user.edit');
 Route::patch('/user/{user}/update',[App\Http\Controllers\UserController::class,'update'])->name('user.update');
 Route::get('/user/list',[App\Http\Controllers\UserController::class,'index'])->name('user.index');
-Route::post('user/{id}/delete', [App\Http\Controllers\UserController::class,'index'])->name('user.delete');
+Route::post('user/{id}/delete', [App\Http\Controllers\UserController::class,'destroy'])->name('user.delete');
 //Route::resource('user', App\Http\Controllers\UserController::class);
 
 //Route::get('/user/list', 'UserController@index')->name('index');

@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use PhpParser\Node\Stmt\TryCatch;
+use Illuminate\Database\QueryException;
 
 class UserController extends Controller
 {
@@ -137,7 +138,24 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $user = User::find($id);
+
+
+        try {
+            $user->delete();
+            return response()->json([
+                'success' => true,
+                'msg'=>'Deleted'
+            ]);
+        } catch (QueryException $th) {
+            return response()->json([
+                'success' => false,
+                'msg'=>$th
+            ]);
+            throw $th;
+        }
+
 
 
     }
