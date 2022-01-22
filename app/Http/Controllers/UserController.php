@@ -19,7 +19,7 @@ class UserController extends Controller
     {
 
        $buscarWordKey = $request->get('buscarWordKey');
-       $users = User::name($buscarWordKey)->orderBy('name','ASC')->paginate(50);
+       $users = User::name($buscarWordKey)->orderBy('name','ASC')->cursorPaginate(25);
 
         return \view('user.index',compact('users'));
     }

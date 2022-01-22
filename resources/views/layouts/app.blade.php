@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -31,7 +31,7 @@
                     {{ config('app.name', 'Laravel') }}
                 </a> --}}
                 <a class="d-block" href="#">
-                    <img src="{{ asset('logo/logo.png') }}" class="h-10" alt="...">
+                    <img src="{{ asset('logo/logo.png') }}" class="h-10x" alt="...">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

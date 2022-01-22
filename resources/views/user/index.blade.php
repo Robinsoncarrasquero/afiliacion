@@ -18,7 +18,7 @@
     </div>
 
     <div class="text text-center">
-        <h5>Lista de Afiliados</h5>
+        <h2>Lista de Afiliados</h2>
     </div>
 
     {{-- <div class="d-flex justify-content-end">
@@ -38,7 +38,7 @@
             </thead>
             <tbody>
             @foreach ($users as $user)
-            <tr id="{{ $user->id }}">
+            <tr id="{{ $user->id }}" >
                 <td>{{ $user->cedula}}</td>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email}}</td>
@@ -65,7 +65,7 @@
         </table>
     </div>
 
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center class="d-grid gap-2 d-md-block">
         {{ $users->links() }}
     </div>
 
@@ -74,31 +74,25 @@
 
 @section('js')
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-        // $(".formulario-eliminar").submit(function(e){
 
-        //     e.preventDefault();
-        //     alert('no  hixo');
-
-        // });
         function deleteConfirmation(id,route){
 
             //console.log(e.target.value);
             Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
+                title: 'Estas seguro de borrar?',
+                text: "Esta operacion no se puede revertir!",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
+                confirmButtonText: 'Si, quiero borrarlo!'
                 }).then((result) => {
                 if (result.isConfirmed) {
                     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
@@ -113,19 +107,17 @@
                             if (results.success) {
                                 document.getElementById(id).remove();
                                 Swal.fire(
-                                'Up !',
+                                'Good',
                                 'El registro ha sido eliminado con exito.',
                                 'success'
                                 )
                             } else {
                                 Swal.fire(
-                                'Error',
+                                'ERROR..',
                                 'El registro no fue eliminado.',
                                 'warning'
                                 )
                             }
-
-                            console.log(data);
 
                         }
 

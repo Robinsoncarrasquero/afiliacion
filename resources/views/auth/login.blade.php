@@ -7,7 +7,7 @@
                     <img src="https://preview.webpixels.io/web/img/logos/clever-light.svg" class="h-10" alt="...">
                 </a> --}}
                 <a class="d-block" href="#">
-                    <img src="logo/logo.png" class="h-10" alt="...">
+                    <img src="logo/logo.png" class="h-20" alt="...">
                 </a>
                 <!-- Title -->
                 <div class="mt-32 mb-20">
@@ -19,7 +19,7 @@
                     </p>
                 </div>
                 <!-- Circle -->
-                <div class="w-56 h-56 bbg-orange-500 rounded-circle position-absolute bottom-0 end-20 transform translate-y-1/3"></div>
+                <div class="w-56 h-56 bg-white rounded-circle position-absolute bottom-0 end-20 transform translate-y-1/3"></div>
             </div>
             <div class="col-12 col-md-9 col-lg-7 offset-lg-5 border-left-lg min-h-lg-screen d-flex flex-column justify-content-center py-lg-16 px-lg-20 position-relative">
                 <div class="row">

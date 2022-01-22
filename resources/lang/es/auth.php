@@ -15,6 +15,6 @@ return [
 
     'failed' => 'Esta credenciales no estan en los archivos.',
     'password' => 'El password es incorrecto.',
-    'throttle' => 'Demasiados intentos fallidos. Por favor intente m en :seconds seconds.',
+    'throttle' => 'Demasiados intentos fallidos. Por favor intente en :seconds seconds.',
 
 ];
